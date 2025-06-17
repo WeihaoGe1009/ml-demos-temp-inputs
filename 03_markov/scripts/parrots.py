@@ -120,7 +120,10 @@ def multi_keyword_search(parrot, keywords):
         matched_sets.append(matched_offsets)
 
     common_offsets = set.intersection(*matched_sets)
-    return [parrot.paragraph_map[offset] for offset in sorted(common_offsets)]
+    result = [parrot.paragraph_map[offset] for offset in sorted(common_offsets)]
+    if len(result)==0:
+        print("I don't know.\n") 
+    return result 
 
 
 def highlight_keywords(text, keywords, color="\033[1;31m"):
