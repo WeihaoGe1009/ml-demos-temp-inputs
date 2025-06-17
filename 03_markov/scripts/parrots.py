@@ -4,6 +4,7 @@
 import bisect
 import pickle
 import numpy as np
+import random
 from collections import defaultdict, Counter
 import re
 
