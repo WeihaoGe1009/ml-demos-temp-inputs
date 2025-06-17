@@ -100,9 +100,9 @@ def multi_keyword_search(parrot, keywords):
     Returns only paragraphs that contain *all* keywords.
     """
     matched_sets = []
+    keywords = [kw.lower() for kw in keywords]
 
     for kw in keywords:
-        kw = kw.lower()
         result = parrot.search(kw)
         matched_offsets = {
             parrot.paragraph_offsets[bisect.bisect_right(parrot.paragraph_offsets, sa_idx) - 1]
