@@ -100,7 +100,6 @@ def multi_keyword_search(parrot, keywords):
     Returns only paragraphs that contain *all* keywords.
     """
     matched_sets = []
-    keywords = [kw.lower() for kw in keywords]
 
     for kw in keywords:
         result = parrot.search(kw)
