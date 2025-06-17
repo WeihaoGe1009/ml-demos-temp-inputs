@@ -102,6 +102,7 @@ def multi_keyword_search(parrot, keywords):
     matched_sets = []
 
     for kw in keywords:
+        kw = kw.lower()
         result = parrot.search(kw)
         matched_offsets = {
             parrot.paragraph_offsets[bisect.bisect_right(parrot.paragraph_offsets, sa_idx) - 1]
